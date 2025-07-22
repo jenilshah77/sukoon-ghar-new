@@ -165,6 +165,12 @@
             scrollTop: anchor.offset().top - 30 // reduced offset for less spacing
           }, 500);
         }
+        // Close the offcanvas menu if open (for mobile)
+        var offcanvasElement = document.getElementById('offcanvasNavbar');
+        if (offcanvasElement) {
+          var offcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement);
+          if (offcanvas) offcanvas.hide();
+        }
       }
     });
   });
